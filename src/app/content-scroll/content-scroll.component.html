@@ -1,0 +1,35 @@
+<div class="wrapper"
+  #wrapper
+  [ngClass]="{
+    'verticalScrollArea': hasVerticalScroll,
+    'horizontalScrollArea': hasHorizontalScroll,
+    'hideScrollBars': isTouchDevice
+  }">
+  <div class="content" #content>
+    <ng-content></ng-content>
+  </div>
+</div>
+<div class='verticalButtons' *ngIf="hasVerticalScroll && isTouchDevice">
+  <div>
+    <div class="upControls">
+      <button (click)="scrollTopEdge()" >>></button>
+      <button (click)="scrollTop()">></button>
+    </div>
+    <div class="downControls">
+      <button (click)="scrollBottom()"><</button>
+      <button (click)="scrollBottomEdge()"><<</button>
+    </div>
+  </div>
+</div>
+<div class='horizontalButtons' *ngIf="hasHorizontalScroll && isTouchDevice">
+  <div>
+    <div class="leftControls">
+      <button (click)="scrollLeftEdge()"><<</button>
+      <button (click)="scrollLeft()"><</button>
+    </div>
+    <div class="rightControls">
+      <button (click)="scrollRight()">> </button>
+      <button (click)="scrollRightEdge()">>></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,121 @@
+:host{
+    white-space: nowrap;
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper::-webkit-scrollbar {
+    width: .7em;
+    height: .7em;
+    background-color: darkgray;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 1em;
+}
+
+.wrapper::-webkit-scrollbar-corner {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.hideScrollBars::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    display: flex;
+    position: absolute;
+    flex-grow: 1; 
+}
+
+.verticalScrollArea {
+    width: calc(100% - 60px);
+    margin-right: 59px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.horizontalScrollArea {
+    height: calc(100% - 60px);
+    margin-bottom: 59px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.verticalButtons {
+    display: block;
+    width: 60px;
+    height: calc(100% - 60px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+}
+    .verticalButtons > div {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .upControls,
+    .downControls {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .verticalButtons > div > .upControls > button, 
+    .verticalButtons > div > .downControls > button {
+        font-weight: bolder;
+        transform: rotate(-90deg);
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        border-radius: 25px;
+    }
+
+.horizontalButtons {
+    display: block;
+    width: calc(100% - 60px);
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+}
+
+    .horizontalButtons > div {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .horizontalButtons > div > .leftControls > button, 
+    .horizontalButtons > div > .rightControls > button {
+        font-weight: bolder;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        border-radius: 25px;
+    }
+
+    .rightControls,
+    .leftControls {
+        display: flex;
+        flex-direction: row;
+    }
